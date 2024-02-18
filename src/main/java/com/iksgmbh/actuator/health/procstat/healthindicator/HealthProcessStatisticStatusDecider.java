@@ -18,7 +18,7 @@ import java.time.OffsetDateTime;
 @Component
 public class HealthProcessStatisticStatusDecider {
 
-    private HealthProcessStatisticData healthProcessStatisticData;
+    protected HealthProcessStatisticData healthProcessStatisticData;
 
 
     /**
