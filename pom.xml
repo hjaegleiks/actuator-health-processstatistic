@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.17</version>
+        <relativePath /><!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.iks-gmbh</groupId>
+    <artifactId>actuator-health-processstatistic</artifactId>
+    <version>1.6.0</version>
+    <name>Spring Boot Actuator Health Process Statistic Plugin</name>
+    <description>Spring boot actuator health process statistic plugin</description>
+    <developers>
+        <developer>
+            <name>H. Jägle</name>
+            <email>h.jaegle@iks-gmbh.com</email>
+            <organization>IKS GmbH, Hilden, Germany</organization>
+            <organizationUrl>http://www.iks-gmbh.com</organizationUrl>
+        </developer>
+    </developers>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!-- build only module JAR file without Spring Boot dependencies and runtime -->
+    </build>
+</project>
