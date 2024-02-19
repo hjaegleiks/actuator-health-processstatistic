@@ -44,7 +44,7 @@ public class HealthProcessStatisticHealthIndicatorTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function", "returncode",
+        healthProcessStatisticData.addError(new HealthErrorData("function", "returncode",
                 "messagetext", "instructiontext", "referenceid"));
 
         // when

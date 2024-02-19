@@ -44,31 +44,6 @@ public class HealthErrorData implements Serializable {
     /**
      * Constructor.
      *
-     * @param timestamp        Timestamp when error event occurred
-     * @param function         Function where error event occurred
-     * @param returnCode       Return code
-     * @param messageText      Message text
-     * @param instructionText  Instruction text
-     * @param referenceId      Reference Id(s)
-     */
-    public HealthErrorData(final OffsetDateTime timestamp,
-            final String function,
-            final String returnCode,
-            final String messageText,
-            final String instructionText,
-            final String referenceId) {
-        super();
-        this.timestamp = timestamp;
-        this.function = function;
-        this.returnCode = returnCode;
-        this.messageText = messageText;
-        this.instructionText = instructionText;
-        this.referenceId = referenceId;
-    }
-
-    /**
-     * Constructor.
-     *
      * @param function         Function where error event occurred
      * @param returnCode       Return code
      * @param messageText      Message text
@@ -87,6 +62,25 @@ public class HealthErrorData implements Serializable {
         this.messageText = messageText;
         this.instructionText = instructionText;
         this.referenceId = referenceId;
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param function         Function where error event occurred
+     * @param returnCode       Return code
+     * @param messageText      Message text
+     */
+    public HealthErrorData(final String function,
+            final String returnCode,
+            final String messageText) {
+        super();
+        this.timestamp = null;
+        this.function = function;
+        this.returnCode = returnCode;
+        this.messageText = messageText;
+        this.instructionText = null;
+        this.referenceId = null;
     }
 
 

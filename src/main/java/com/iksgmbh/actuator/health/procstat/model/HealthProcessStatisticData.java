@@ -195,21 +195,18 @@ public class HealthProcessStatisticData implements Serializable {
     /**
      * Add error event.
      *
-     * @param timestamp        Timestamp when error event occurred
      * @param function         Function where error event occurred
      * @param returnCode       Return code of error event
      * @param messageText      Message text of error event
      * @param instructionText  Instruction text for error event
      * @param referenceId      Reference IDs of error event
      */
-    public void addError(final OffsetDateTime timestamp,
-            final String function,
+    public void addError(final String function,
             final String returnCode,
             final String messageText,
             final String instructionText,
             final String referenceId) {
-        addError(new HealthErrorData(timestamp,
-                function,
+        addError(new HealthErrorData(function,
                 returnCode,
                 messageText,
                 instructionText,
@@ -222,20 +219,13 @@ public class HealthProcessStatisticData implements Serializable {
      * @param function         Function where error event occurred
      * @param returnCode       Return code of error event
      * @param messageText      Message text of error event
-     * @param instructionText  Instruction text for error event
-     * @param referenceId      Reference IDs of error event
      */
     public void addError(final String function,
             final String returnCode,
-            final String messageText,
-            final String instructionText,
-            final String referenceId) {
-        addError(new HealthErrorData(null,
-                function,
+            final String messageText) {
+        addError(new HealthErrorData(function,
                 returnCode,
-                messageText,
-                instructionText,
-                referenceId));
+                messageText));
     }
 
     /**

@@ -18,6 +18,9 @@ import java.time.OffsetDateTime;
 @Component
 public class HealthProcessStatisticStatusDecider {
 
+    // Constants
+    public final static String HEALTH_STATUS_CODE_WARNING = "WARNING";
+
     protected HealthProcessStatisticData healthProcessStatisticData;
 
 
@@ -32,7 +35,9 @@ public class HealthProcessStatisticStatusDecider {
     }
 
     /**
-     * Implementation to determine current application health status like UP, DOWN, ERROR, WARNING, etc.
+     * Implementation to determine current application health status like
+     * UP, DOWN, OUT_OF_SERVICE, UNKNOWN, ERROR, WARNING, etc.
+     * @see org.springframework.boot.actuate.health.Health
      *
      * @return Health status object
      */
@@ -52,7 +57,7 @@ public class HealthProcessStatisticStatusDecider {
 
         // WARNING - Errors occurred in the past
         if (isCounterGreaterZero(HealthProcessStatisticDataKey.error)) {
-           return Health.status("WARNING")
+           return Health.status(HEALTH_STATUS_CODE_WARNING)
                     .withDetails(healthProcessStatisticData.getHealthProcessStatisticDataMap())
                     .build();
         }

@@ -48,7 +48,7 @@ public class HealthProcessStatisticControllerTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(null, "function", "returncode", "messagetext", null, "referenceId");
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", null, "referenceId");
 
         // when
 
@@ -66,7 +66,7 @@ public class HealthProcessStatisticControllerTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(null, "function", "returncode", "messagetext", null, "referenceId");
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", null, "referenceId");
 
         // when
 
@@ -82,7 +82,7 @@ public class HealthProcessStatisticControllerTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(null, "function", "returncode", "messagetext", null, "referenceId");
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", null, "referenceId");
 
         // when
 

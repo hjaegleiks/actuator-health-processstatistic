@@ -1,7 +1,6 @@
 package com.iksgmbh.actuator.health.procstat.healthindicator;
 
 import com.iksgmbh.actuator.health.procstat.config.HealthProcessStatisticConfig;
-import com.iksgmbh.actuator.health.procstat.model.HealthErrorData;
 import com.iksgmbh.actuator.health.procstat.model.HealthProcessStatisticData;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +42,7 @@ public class HealthProcessStatisticStatusDeciderTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", "instructiontext", "referenceid");
 
         // when
         Health result = healthProcessStatisticStatusDecider.checkHealth();
@@ -58,10 +56,8 @@ public class HealthProcessStatisticStatusDeciderTest {
 
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function1", "returncode1",
-                "messagetext1", "instructiontext1", "referenceid1"));
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function2", "returncode2",
-                "messagetext2", "instructiontext2", "referenceid2"));
+        healthProcessStatisticData.addError("function1", "returncode1", "messagetext1", "instructiontext1", "referenceid1");
+        healthProcessStatisticData.addError("function2", "returncode2", "messagetext2", "instructiontext2", "referenceid2");
 
         // when
         Health result = healthProcessStatisticStatusDecider.checkHealth();

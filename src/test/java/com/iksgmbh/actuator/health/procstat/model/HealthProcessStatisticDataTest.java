@@ -32,8 +32,7 @@ public class HealthProcessStatisticDataTest {
         healthProcessStatisticData.setServiceStartTimestamp(startTimestamp);
         healthProcessStatisticData.incrementCounter(HealthProcessStatisticDataKey.error);
         healthProcessStatisticData.incrementCounter(HealthProcessStatisticDataKey.request);
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", "instructiontext", "referenceid");
 
         // when
         healthProcessStatisticData.reset();
@@ -55,8 +54,7 @@ public class HealthProcessStatisticDataTest {
     void resetErrorList_test() {
         // given
         healthProcessStatisticData.reset();
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
+        healthProcessStatisticData.addError("function", "returncode", "messagetext", "instructiontext", "referenceid");
 
         // when
         healthProcessStatisticData.resetErrorList();
@@ -178,8 +176,7 @@ public class HealthProcessStatisticDataTest {
 
         healthProcessStatisticData.reset();
 
-        HealthErrorData error = new HealthErrorData(null,
-                function, returnCode, messageText, instructionText, referenceId);
+        HealthErrorData error = new HealthErrorData(function, returnCode, messageText, instructionText, referenceId);
 
         // when
         healthProcessStatisticData.addError(error);
@@ -218,8 +215,7 @@ public class HealthProcessStatisticDataTest {
         healthProcessStatisticData.reset();
 
         // when
-        healthProcessStatisticData.addError(OffsetDateTime.now(),
-                function, returnCode, messageText, instructionText, referenceId);
+        healthProcessStatisticData.addError(function, returnCode, messageText, instructionText, referenceId);
 
         // then
         List<HealthErrorData> resultErrorList = healthProcessStatisticData.getErrorList();
@@ -249,14 +245,11 @@ public class HealthProcessStatisticDataTest {
         String function = "function test";
         String returnCode = "returncode test";
         String messageText = "messagetext test";
-        String instructionText = "instructiontext test";
-        String referenceId = "referenceid test";
 
         healthProcessStatisticData.reset();
 
         // when
-        healthProcessStatisticData.addError(
-                function, returnCode, messageText, instructionText, referenceId);
+        healthProcessStatisticData.addError(function, returnCode, messageText);
 
         // then
         List<HealthErrorData> resultErrorList = healthProcessStatisticData.getErrorList();
@@ -267,8 +260,8 @@ public class HealthProcessStatisticDataTest {
         assertEquals(function, resultError.getFunction());
         assertEquals(returnCode, resultError.getReturnCode());
         assertEquals(messageText, resultError.getMessageText());
-        assertEquals(instructionText, resultError.getInstructionText());
-        assertEquals(referenceId, resultError.getReferenceId());
+        assertNull(resultError.getInstructionText());
+        assertNull(resultError.getReferenceId());
 
         Map<String, Object> resultHealthProcessStatisticDataMap = healthProcessStatisticData.getHealthProcessStatisticDataMap();
         assertEquals(1L, resultHealthProcessStatisticDataMap.get(
@@ -287,16 +280,11 @@ public class HealthProcessStatisticDataTest {
         healthProcessStatisticData.setErrorListMaxSize(5);
 
         // when
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function1", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function2", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function3", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function4", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function5", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
+        healthProcessStatisticData.addError("function1", "returncode", "messagetext", "instructiontext", "referenceid");
+        healthProcessStatisticData.addError("function2", "returncode", "messagetext", "instructiontext", "referenceid");
+        healthProcessStatisticData.addError("function3", "returncode", "messagetext", "instructiontext", "referenceid");
+        healthProcessStatisticData.addError("function4", "returncode", "messagetext", "instructiontext", "referenceid");
+        healthProcessStatisticData.addError("function5", "returncode", "messagetext", "instructiontext", "referenceid");
 
         // then
         List<HealthErrorData> resultErrorList = healthProcessStatisticData.getErrorList();
@@ -307,8 +295,7 @@ public class HealthProcessStatisticDataTest {
 
 
         // when
-        healthProcessStatisticData.addError(new HealthErrorData(null, "function6", "returncode",
-                "messagetext", "instructiontext", "referenceid"));
+        healthProcessStatisticData.addError("function6", "returncode", "messagetext", "instructiontext", "referenceid");
 
         // then
         resultErrorList = healthProcessStatisticData.getErrorList();
