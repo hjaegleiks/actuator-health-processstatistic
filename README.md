@@ -4,9 +4,6 @@
 Dieses Projekt erweitert den Spring Boot Actuator Health Endpoint um einen Block für Verarbeitungsstatistiken.
 Die Werte können zum Monitoring der Anwendung verwendet werden.
 
-## Home
-https://github.com/hjaegleiks/actuator-health-processstatistic
-
 ## How to Install and Run the Project
 
 ### Prerequisites
@@ -16,7 +13,7 @@ https://github.com/hjaegleiks/actuator-health-processstatistic
 
 ### Install
 Projekt aus GitHub Repository in ein neues Projekt-Verzeichnis klonen:  
-https://github.com/hjaegleiks/actuator-health-processstatistic.git
+https://github.com/iks-gmbh-projects/actuator-health-processstatistic.git
 
 Dort Java Archiv Datei (JAR) erstellen mit Build Tool Maven und `pom.xml`:
 ```shell
@@ -54,7 +51,7 @@ public class SampleApp {
 ```
 
 Als Beispiel siehe GitHub Repository `actuator-health-sample`.  
-https://github.com/hjaegleiks/actuator-health-sample
+https://github.com/iks-gmbh-projects/actuator-health-sample
 
 Mehr Details erklärt das Dokument [/docs/manual.md](./docs/manual.md) .
 
