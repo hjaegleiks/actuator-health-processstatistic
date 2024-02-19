@@ -53,7 +53,7 @@ einbinden zu können. Voraussetzungen dafür sind:
 * Dieses Plugin actuator-health-processstatisic.jar
 
 Dazu dieses Projekt aus GitHub Repository in ein neues Projekt-Verzeichnis klonen:  
-https://github.com/hjaegleiks/actuator-health-processstatistic.git
+https://github.com/iks-gmbh-projects/actuator-health-processstatistic.git
 
 Dort Java Archiv Datei (JAR) erstellen mit Build Tool Maven und `pom.xml`:
 ```shell
@@ -90,7 +90,7 @@ public class SampleApp {
 ```
 
 Als Beispiel siehe GitHub Repository `actuator-health-sample`.  
-https://github.com/hjaegleiks/actuator-health-sample
+https://github.com/iks-gmbh-projects/actuator-health-sample
 
 ### Verwendung in eigener Anwendung
 Nun stehen dem Entwickler über die Bean `HealthProcessStatisticData` im `@ApplicationScope` neue Funktionen zur Verfügung.
@@ -210,7 +210,7 @@ Ausgewertet werden kann die JSON-Datenstruktur des Health REST-Endpoints. Am ein
 Health Status geprüft werden. Alle untergeordneten Komponenten können diesen beeinflussen.
 
 * `UP` = Anwendung ist "oben" und einsatzbereit.
-* `DOWN` = Anwendung ist "down" und nicht einsatzbereit.
+* `DOWN` = Anwendung ist "unten" und nicht einsatzbereit.
 * `OUT_OF_SERVICE` = Anwendung ist oben, kann aber nicht reagieren.
 * `UNKNOWN` = Zustand der Anwendung ist unbekannt.
 
