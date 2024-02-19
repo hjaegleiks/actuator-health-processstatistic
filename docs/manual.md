@@ -28,7 +28,7 @@ Informationen wie
 Diese können über zusätzliche REST-Schnittstellen abgerufen und in Überwachungstools wie [checkmk](https://checkmk.com/),
 [Nagios](https://www.nagios.org/) oder anderen, selbstgebastelten Dashboards eingebunden werden.
 Hat die überwachte Anwendung Probleme und läuft nicht mehr, gehen bei den Administratoren / IT-Operating "rote Lampen"
-an 🚨 und sie können zeitnah darauf reagieren. 
+an 🚨 und sie können (hoffentlich) zeitnah darauf reagieren. 
 
 ## Was macht Health Process Statistic Plugin?
 Dieses Plugin kann das Spring Boot Feature `Actuator` um weitere Metriken zur Verarbeitungsstatistik erweitern:
@@ -158,9 +158,9 @@ management.health.processStatistic.enabled=true
 management.health.processStatistic.errorlist.maxsize=5
 ```
 
-Die URLs der HTTP GET Requests lauten dann:
-http://localhost:8080/myapp/actuator/
-http://localhost:8080/myapp/actuator/health
+Die URLs der HTTP GET Requests lauten dann:  
+http://localhost:8080/myapp/actuator/  
+http://localhost:8080/myapp/actuator/health  
 
 ```json
 {
