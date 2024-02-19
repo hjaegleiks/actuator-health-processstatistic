@@ -39,8 +39,8 @@ Dieses Plugin kann das Spring Boot Feature `Actuator` um weitere Metriken zur Ve
 * Zeitpunkt letzter fehlgeschlagener Request,
 * Zeitpunkt wann Anwendung zuletzt gestartet wurde.
 
-Die Daten werden In-Memory gehalten und NICHT in einer Datenbank persistiert. Sie können zu einem beliebigen Zeitpunkt
-zurückgesetzt werden, ohne die Anwendung neu starten zu müssen.
+Die Daten werden In-Memory gehalten und NICHT in einer Datei oder Datenbank persistiert. Sie können zu einem beliebigen
+Zeitpunkt zurückgesetzt werden, ohne die Anwendung neu starten zu müssen.
 
 ## Wie funktionert das?
 
@@ -285,7 +285,7 @@ public class MyHealthProcessStatisticStatusDecider extends HealthProcessStatisti
 
 ## Health Status zurücksetzen
 Sind die Fehler der Anwendung behoben worden, kann die Verarbeitungsstatistik und der Health Status zurückgesetzt werden.
-Dazu diese URL mit HTTP GET aufrufen:
+Dazu diese URL mit HTTP GET aufrufen:  
 http://localhost:8080/myapp/actuator/healthProcessStatistic/reset?reset=true
 
 Ein Neustart der Anwendung setzt ebenso die Verarbeitungsstatistik und den Health Status zurück.
