@@ -61,8 +61,8 @@ mvn clean install
 ```
 Erzeugt im Projekt-Unterverzeichnis `target` Datei `actuator-health-processstatistic.jar`.
 
-Um Spring Actuator und Health Process Statistic in der eigenen Anwendung einzubinden, folgende Dependencies in deren
-`pom.xml` aufnehmen:
+Um Spring Actuator und Health Process Statistic in eine Anwendung einzubinden, folgende Dependencies in die
+eigene `pom.xml` aufnehmen:
 ```xml
     <dependencies>
         <dependency>
